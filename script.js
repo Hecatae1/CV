@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Fade-in/fade-out for sections
+    // Fade-in for sections
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -13,11 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 
-    // Certificate upload and management
+    // Hero image animation on scroll
+    const heroImage = document.getElementById('heroImage');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            heroImage.style.width = '80px';
+            heroImage.style.position = 'fixed';
+            heroImage.style.top = '10px';
+            heroImage.style.left = '20px';
+            heroImage.style.borderRadius = '50%';
+        } else {
+            heroImage.style.width = '60%';
+            heroImage.style.position = 'absolute';
+            heroImage.style.top = '50%';
+            heroImage.style.left = '50%';
+            heroImage.style.transform = 'translate(-50%, -50%)';
+            heroImage.style.borderRadius = '10px';
+        }
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+    // Certificate upload and management (view-only for clients)
     const uploadInput = document.getElementById('certificateUpload');
     const gallery = document.getElementById('certificateGallery');
     const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
+    const modalContent = document.getElementById('modalContent');
     const closeModal = document.querySelector('.modal-close');
 
     // Load certificates from localStorage
@@ -27,33 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
         certificates.forEach((src, index) => {
             const imgContainer = document.createElement('div');
             imgContainer.className = 'certificate-item';
-            imgContainer.innerHTML = `
-                <img src="${src}" alt="Certificate ${index + 1}">
-                <button class="delete-btn" data-index="${index}">Delete</button>
-            `;
+            const isImage = src.startsWith('data:image');
+            const content = isImage ? `<img src="${src}" alt="Certificate ${index + 1}">` : `<object data="${src}" type="application/pdf" width="100%" height="200">PDF</object>`;
+            imgContainer.innerHTML = content;
             gallery.appendChild(imgContainer);
 
-            // Double-click to zoom
-            const img = imgContainer.querySelector('img');
-            img.addEventListener('dblclick', () => {
-                modalImage.src = src;
+            // Double-click to zoom (view-only)
+            const element = imgContainer.querySelector(isImage ? 'img' : 'object');
+            element.addEventListener('dblclick', () => {
+                modalContent.innerHTML = content;
                 modal.style.display = 'flex';
-            });
-        });
-
-        // Delete button event listeners
-        document.querySelectorAll('.delete-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const index = btn.dataset.index;
-                const certificates = JSON.parse(localStorage.getItem('certificates') || '[]');
-                certificates.splice(index, 1);
-                localStorage.setItem('certificates', JSON.stringify(certificates));
-                loadCertificates();
             });
         });
     };
 
-    // Upload certificates
+    // Upload certificates (admin-only action)
     uploadInput.addEventListener('change', (event) => {
         const files = event.target.files;
         const certificates = JSON.parse(localStorage.getItem('certificates') || '[]');
@@ -67,12 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.readAsDataURL(file);
         });
     });
-
-    // Clear all certificates
-    window.clearCertificates = () => {
-        localStorage.removeItem('certificates');
-        loadCertificates();
-    };
 
     // Close modal
     closeModal.addEventListener('click', () => {

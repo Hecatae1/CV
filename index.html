@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Dynamic Logo -->
-    <div class="logo-container">
-        <img src="images/logo.png" alt="Dynamic Logo" class="dynamic-logo">
-    </div>
+    <!-- Squiggly Rotating Animation -->
+    <div class="squiggly-animation"></div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My CV</a>
+            <a class="navbar-brand" href="#">[Your Name]</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience & Extracurriculars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
                 </ul>
@@ -31,23 +29,25 @@
         </div>
     </nav>
 
-    <!-- Abstract Toonish Art -->
-    <div class="abstract-art"></div>
+    <!-- Hero Section with Personal Image -->
+    <div class="hero">
+        <img src="images/me.jpg" alt="Your Photo" class="hero-image" id="heroImage">
+    </div>
 
     <!-- Main Content -->
     <main class="container mt-5 pt-5">
         <!-- About Me -->
         <section id="about" class="section fade-in">
             <h2>About Me</h2>
-            <p>Hello! I'm [Your Name], a passionate [your profession, e.g., software developer] with a focus on [your focus, e.g., web development]. I enjoy creating innovative solutions and learning new technologies.</p>
+            <p>Hello! I'm [Your Name], a passionate [your profession] focused on [your focus]. I bring creativity and technical skills to every project.</p>
         </section>
 
-        <!-- Experience and Extracurriculars -->
+        <!-- Experience -->
         <section id="experience" class="section fade-in">
-            <h2>Experience & Extracurriculars</h2>
+            <h2>Experience</h2>
             <ul>
-                <li><strong>Software Developer at ABC Corp</strong> (2022-Present): Developed web applications using Java and Spring Boot.</li>
-                <li><strong>Volunteer, Tech Club</strong> (2021-2022): Led workshops on coding for beginners.</li>
+                <li><strong>Role at Company</strong> (2022-Present): [Description]</li>
+                <li><strong>Volunteer Role</strong> (2021-2022): [Description]</li>
             </ul>
         </section>
 
@@ -55,24 +55,23 @@
         <section id="courses" class="section fade-in">
             <h2>Courses</h2>
             <ul>
-                <li>Spring Boot and Microservices (Coursera, 2023)</li>
-                <li>Advanced Java Programming (Udemy, 2022)</li>
+                <li>[Course Name] (Platform, Year)</li>
+                <li>[Course Name] (Platform, Year)</li>
             </ul>
         </section>
 
         <!-- Certificates -->
         <section id="certificates" class="section fade-in">
             <h2>Certificates</h2>
-            <input type="file" id="certificateUpload" accept="image/*" multiple>
-            <button onclick="clearCertificates()">Clear All Certificates</button>
+            <input type="file" id="certificateUpload" accept="image/*,application/pdf" multiple>
             <div id="certificateGallery" class="certificate-gallery"></div>
         </section>
     </main>
 
-    <!-- Modal for Zoomed Image -->
+    <!-- Modal for Zoomed Certificate -->
     <div id="imageModal" class="modal">
         <span class="modal-close">×</span>
-        <img class="modal-content" id="modalImage">
+        <div class="modal-content" id="modalContent"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

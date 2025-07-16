@@ -1,63 +1,55 @@
-* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #F5F5DC; /* Beige background (earth tone) */
-    color: #4A3728; /* Dark brown text (earth tone) */
-    font-family: Arial, sans-serif;
+    background-color: #F4E1D2; /* Beige (neutral minimalist) */
+    color: #6B4E31; /* Rich brown (neutral) */
+    font-family: 'Arial', sans-serif;
     scroll-behavior: smooth;
     position: relative;
+    overflow-x: hidden;
 }
 
 .navbar {
-    background-color: #8B7E66; /* Muted brown (earth tone) */
+    background-color: #8B7E66; /* Muted brown */
     z-index: 100;
 }
 
 .navbar-brand, .nav-link {
-    color: #F5F5DC !important; /* Beige text */
+    color: #F4E1D2 !important; /* Beige text */
     font-size: 15px;
 }
 
     .navbar-brand:hover, .nav-link:hover {
-        color: #D4A017 !important; /* Golden yellow (earth tone hover) */
+        color: #D8A7B1 !important; /* Pinkish tone hover */
     }
 
-.logo-container {
+.squiggly-animation {
     position: fixed;
-    top: 10px;
-    left: 20px;
-    z-index: 200; /* Above navbar */
-}
-
-.dynamic-logo {
-    width: 180px;
-    height: 80px;
+    top: 50%;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(#8B7E66, #D8A7B1, #F4E1D2);
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Professional shadow */
-    transition: transform 0.3s ease;
+    animation: squiggleRotate 10s infinite linear, squiggleMove 5s infinite ease-in-out;
+    z-index: 50;
 }
 
-    .dynamic-logo:hover {
-        transform: scale(1.1);
+@keyframes squiggleRotate {
+    0% {
+        transform: rotate(0deg);
     }
 
-.abstract-art {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 100vh;
-    background: linear-gradient(45deg, #8B7E66, #D4A017);
-    clip-path: circle(40% at 0 40%);
-    animation: wave 5s infinite ease-in-out;
-    z-index: 50; /* Behind logo and navbar */
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes wave {
+@keyframes squiggleMove {
     0% {
         transform: translateY(0);
     }
@@ -71,17 +63,36 @@ body {
     }
 }
 
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
 main {
-    padding-top: 100px; /* Space for navbar and logo */
-    max-width: 800px; /* Cleaner layout */
+    padding-top: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     padding: 20px;
-    background-color: #E8DAB2; /* Light beige (earth tone) */
+    background-color: #F5F5DC; /* Light beige */
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Professional shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -92,20 +103,16 @@ main {
         transform: translateY(0);
     }
 
-    .section:not(.visible) {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
 h2 {
-    color: #6B4E31; /* Rich brown (earth tone) */
+    color: #6B4E31;
     font-size: 25px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 p, ul li {
     font-size: 15px;
+    line-height: 1.5;
 }
 
 .certificate-gallery {
@@ -115,18 +122,13 @@ p, ul li {
     margin-top: 20px;
 }
 
-    .certificate-gallery img {
+    .certificate-gallery img, .certificate-gallery object {
         width: 100%;
         height: auto;
         border-radius: 5px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
     }
-
-        .certificate-gallery img:hover {
-            opacity: 0.8;
-        }
 
 .modal {
     display: none;
@@ -142,17 +144,22 @@ p, ul li {
 }
 
 .modal-content {
-    max-width: 90vw; /* Fit standard screens */
+    max-width: 90vw;
     max-height: 90vh;
-    object-fit: contain; /* Maintain aspect ratio */
+    object-fit: contain;
     border-radius: 5px;
 }
+
+    .modal-content img, .modal-content object {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
 .modal-close {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: #F5F5DC;
+    color: #F4E1D2;
     font-size: 30px;
     cursor: pointer;
 }
