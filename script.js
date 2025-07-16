@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // Fade-in for sections
     const sections = document.querySelectorAll('.section');
@@ -21,17 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScroll = window.pageYOffset;
         if (currentScroll > lastScroll && currentScroll > 100) {
             heroImage.style.width = '80px';
+            heroImage.style.height = '80px';
             heroImage.style.position = 'fixed';
             heroImage.style.top = '10px';
             heroImage.style.left = '20px';
             heroImage.style.borderRadius = '50%';
+            heroImage.style.zIndex = '200';
         } else {
-            heroImage.style.width = '60%';
+            heroImage.style.width = '50%';
+            heroImage.style.height = 'auto';
             heroImage.style.position = 'absolute';
             heroImage.style.top = '50%';
             heroImage.style.left = '50%';
             heroImage.style.transform = 'translate(-50%, -50%)';
-            heroImage.style.borderRadius = '10px';
+            heroImage.style.borderRadius = '15px';
+            heroImage.style.zIndex = '10';
         }
         lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     });
