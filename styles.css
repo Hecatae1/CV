@@ -1,4 +1,4 @@
-* {
+* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,14 +9,17 @@ body {
     color: #4A3728; /* Dark brown text (earth tone) */
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
+    position: relative;
 }
 
 .navbar {
     background-color: #8B7E66; /* Muted brown (earth tone) */
+    z-index: 100;
 }
 
 .navbar-brand, .nav-link {
     color: #F5F5DC !important; /* Beige text */
+    font-size: 15px;
 }
 
     .navbar-brand:hover, .nav-link:hover {
@@ -25,15 +28,16 @@ body {
 
 .logo-container {
     position: fixed;
-    top: 20px;
+    top: 10px;
     left: 20px;
-    z-index: 1000;
+    z-index: 200; /* Above navbar */
 }
 
 .dynamic-logo {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Professional shadow */
     transition: transform 0.3s ease;
 }
 
@@ -41,8 +45,35 @@ body {
         transform: scale(1.1);
     }
 
+.abstract-art {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100vh;
+    background: linear-gradient(45deg, #8B7E66, #D4A017);
+    clip-path: circle(50% at 0 50%);
+    animation: wave 5s infinite ease-in-out;
+    z-index: 50; /* Behind logo and navbar */
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 main {
-    padding-top: 80px;
+    padding-top: 100px; /* Space for navbar and logo */
+    max-width: 800px; /* Cleaner layout */
 }
 
 .section {
@@ -50,6 +81,7 @@ main {
     padding: 20px;
     background-color: #E8DAB2; /* Light beige (earth tone) */
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Professional shadow */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -60,9 +92,20 @@ main {
         transform: translateY(0);
     }
 
+    .section:not(.visible) {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
 h2 {
     color: #6B4E31; /* Rich brown (earth tone) */
+    font-size: 25px;
+    text-align: center;
     margin-bottom: 20px;
+}
+
+p, ul li {
+    font-size: 15px;
 }
 
 .certificate-gallery {
@@ -78,6 +121,7 @@ h2 {
         border-radius: 5px;
         cursor: pointer;
         transition: opacity 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
         .certificate-gallery img:hover {
@@ -98,8 +142,10 @@ h2 {
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw; /* Fit standard screens */
+    max-height: 90vh;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 5px;
 }
 
 .modal-close {
