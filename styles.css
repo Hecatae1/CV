@@ -52,7 +52,7 @@ body {
     width: 150px;
     height: 100vh;
     background: linear-gradient(45deg, #8B7E66, #D4A017);
-    clip-path: circle(50% at 0 50%);
+    clip-path: circle(40% at 0 40%);
     animation: wave 5s infinite ease-in-out;
     z-index: 50; /* Behind logo and navbar */
 }
