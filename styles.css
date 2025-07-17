@@ -1,185 +1,29 @@
-* {
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+{
+    margin:0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    background: linear-gradient(135deg, #F4E1D2, #F5F5DC); /* Beige gradient */
-    color: #6B4E31; /* Rich brown */
-    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
     scroll-behavior: smooth;
-    position: relative;
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
-.navbar {
-    background: rgba(139, 126, 102, 0.9); /* Muted brown with transparency */
-    backdrop-filter: blur(5px);
-    z-index: 100;
+:root {
+    --bg-color: #fcfcfc;
+    --second-bg-color: #e8dfe8;
+    --text-color: #000000;
+    --main-color: #ff00f2;
 }
 
-.navbar-brand, .nav-link {
-    color: #F4E1D2 !important;
-    font-size: 15px;
-    transition: color 0.3s ease;
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
 }
 
-    .navbar-brand:hover, .nav-link:hover {
-        color: #D8A7B1 !important; /* Pinkish tone */
-    }
-
-.squiggly-animation {
-    position: fixed;
-    top: 20%;
-    left: -30px;
-    width: 120px;
-    height: 120px;
-    background: conic-gradient(#8B7E66, #D8A7B1, #F4E1D2);
-    border-radius: 50%;
-    clip-path: polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
-    animation: squiggleRotate 12s infinite linear, squiggleMove 6s infinite ease-in-out;
-    z-index: 50;
+body{
+    background: var(--bg-color);
+    color: var(--text-color)
 }
-
-@keyframes squiggleRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes squiggleMove {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(10px, -10px);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: rgba(216, 167, 177, 0.1); /* Subtle pinkish overlay */
-}
-
-.hero-image {
-    width: 50%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
-}
-
-main {
-    padding-top: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-bottom: 40px;
-}
-
-.section {
-    margin-bottom: 40px;
-    padding: 25px;
-    background: rgba(245, 245, 220, 0.9); /* Light beige with transparency */
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-h2 {
-    color: #6B4E31;
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-p, ul li {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #4A3728; /* Slightly lighter brown */
-}
-
-.certificate-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-    .certificate-gallery img, .certificate-gallery object {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-        .certificate-gallery img:hover, .certificate-gallery object:hover {
-            transform: scale(1.05);
-        }
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 10px;
-    background: #F5F5DC;
-    padding: 20px;
-    overflow: auto;
-}
-
-    .modal-content img, .modal-content object {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #F4E1D2;
-    font-size: 35px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-    .modal-close:hover {
-        color: #D8A7B1;
-    }
