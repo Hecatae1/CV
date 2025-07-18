@@ -75,3 +75,9 @@ section {
     color: var(--text-color);
     display:none;
 }
+
+.home{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
