@@ -53,7 +53,7 @@ body{
     font-size: 1.7rem;
     color: var(--text-color);
     margin-left:3.5rem;
-    transition: 3s;
+    transition: 1s;
 
 }
 
@@ -61,4 +61,10 @@ body{
 .navbar a.active{
     color:var(--main-color);
 
+}
+
+#menu-icon {
+    font-size: 3.3rem;
+    color: var(--text-color);
+    display:none;
 }
