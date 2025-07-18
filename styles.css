@@ -76,8 +76,14 @@ section {
     display:none;
 }
 
-.home{
-    display:flex;
+.home {
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+
 }
