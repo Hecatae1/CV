@@ -139,7 +139,7 @@ span {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
-    color: var(--second-bg-color);
+    color: var(--text-color);
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
