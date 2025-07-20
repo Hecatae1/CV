@@ -183,3 +183,16 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
+
+.experiences h2{
+    margin-bottom: 5rem;
+
+}
+.experiences-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-wrap: wrap;
+   gap: 2rem;
+    
+}
