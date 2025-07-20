@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+/*#ff00f2*/
 *{
     margin:0;
     padding: 0;
@@ -206,12 +206,19 @@ span1 {
         border-radius: 2rem;
         text-align: center;
         border: .2rem solid var(--bg-color);
+        transition: .5s ease;
     }
-.experiences-box i{
-    font-size: 7rem;
-    color: var(--main-color);
 
+.experiences-container .experiences-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.03);
 }
+
+
+.experiences-box i {
+        font-size: 7rem;
+        color: var(--main-color);
+    }
 .experiences-box h3 {
     font-size: 2.6rem;
 }
@@ -220,4 +227,6 @@ span1 {
     font-size: 1.6rem;
     margin: 1rem 0 3rem
 }
+
+
 
