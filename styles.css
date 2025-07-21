@@ -299,7 +299,7 @@ span1 {
 }
 
 .projects-box:hover img {
-    border-color: var(--main-color);
+    
     transform: scale(1.2);
 }
 
