@@ -3,6 +3,8 @@
 #fcfcfc
 #e8dfe8
 #8f04c2 mc2
+
+    #BC87CB
 */
 *{
     margin:0;
@@ -20,7 +22,7 @@
     --bg-color: #fcfcfc;
     --second-bg-color: #e8dfe8;
     --text-color: #000000;
-    --main-color: #BC87CB;
+    --main-color: #8f04c2;
 }
 
 html{
