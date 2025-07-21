@@ -261,7 +261,7 @@ span1 {
 
 .projects-box img {
     width: 100%;
-
+    transition: .5s ease;
 }
 .projects-box .projects-layer{
     position: absolute;
@@ -273,5 +273,38 @@ span1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+}
+
+.projects-layer h4{
+    font-size: 3rem;
+}
+
+.projects-layer p{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.projects-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+
+}
+
+.projects-box:hover img {
+    border-color: var(--main-color);
+    transform: scale(1.2);
+}
+
+.projects-layer a i{
+    font-size: 2rem;
+    color: var(--second-bg-color);
 
 }
