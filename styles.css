@@ -315,3 +315,11 @@ span1 {
     color: var(--second-bg-color);
 
 }
+
+.contact h2{
+    margin-bottom: 3rem;
+}
+
+.contact form{
+    max-width: 70rem;
+}
