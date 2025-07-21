@@ -235,5 +235,31 @@ span1 {
     margin: 1rem 0 3rem
 }
 
+.projects {
+    background: var(--second-bg-color);
 
+}
 
+.projects h2 {
+    margin-bottom: 4rem;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items:center;
+    gap: 2.5rem;
+}
+
+.projects-container .projects-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.projects-box img {
+    width: 100%;
+
+}
