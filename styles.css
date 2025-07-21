@@ -263,7 +263,7 @@ span1 {
     width: 100%;
     transition: .5s ease;
 }
-.projects-box .projects-layer{
+.projects-box .projects-layer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -276,11 +276,18 @@ span1 {
     text-align: center;
     padding: 0 4rem;
     transform: translateY(100%);
+    transition: .5s ease;
 }
 
-.projects-layer h4{
-    font-size: 3rem;
+
+.projects-box:hover .projects-layer {
+    transform: translateY(0);
 }
+
+
+.projects-layer h4 {
+        font-size: 3rem;
+    }
 
 .projects-layer p{
     font-size: 1.6rem;
