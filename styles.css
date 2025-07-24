@@ -262,6 +262,8 @@ span1 {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    height: auto; /*copilot */
+    aspect-ratio: 4/3; /*copilot*/
 }
 
 .projects-box img {
@@ -277,6 +279,7 @@ span1 {
     position: absolute;
     bottom: 0;
     left: 0;
+    top:0; /*from copilot*/
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
