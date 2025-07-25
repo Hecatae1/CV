@@ -421,6 +421,14 @@ span1 {
         padding-bottom: 7rem;
     }
 
+    .projects{
+        padding-bottom: 7rem;
+    }
+
+    .contact{
+        min-height: auto;
+    }
+
     .footer {
         padding: 2rem 3%;
     }
@@ -473,7 +481,7 @@ span1 {
     .about{
         flex-direction:column-reverse;
     }
-    .about-img {
+    .about img {
         width: 70vw;
         margin-top: 4rem;
     }
@@ -481,5 +489,39 @@ span1 {
     .experiences h2{
         margin-bottom: 3rem;
 
+    }
+
+    .projects h2 {
+        margin-bottom: 3rem;
+    }
+
+    .projects-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .projects-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .input-box input{
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px){
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw;
     }
 }
