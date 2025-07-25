@@ -96,7 +96,9 @@ section {
 
 .home-img img {
     width: 35vw;
-    animation:floatImage 4s ease-in-out infinite;
+    animation: floatImage 4s ease-in-out infinite;
+    height: auto; /*copilot influene*/
+    aspect-ratio: auto; /*copilot influene*/
 }
 
 @keyframes floatImage {
@@ -189,8 +191,6 @@ span1 {
 
 .about-img img {
     width: 35vw;
-   /* height: 35vw;
-    border-radius: 6rem;*/
 }
 
 .heading {
