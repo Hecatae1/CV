@@ -189,8 +189,8 @@ span1 {
 
 .about-img img {
     width: 35vw;
-    height: 35vw;
-    border-radius: 6rem;
+   /* height: 35vw;
+    border-radius: 6rem;*/
 }
 
 .heading {
