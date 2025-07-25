@@ -470,7 +470,7 @@ span1 {
         display:none;
     }
 
-    .navbar .active{
+    .navbar.active{
         display:block;
     }
 
