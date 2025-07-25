@@ -276,7 +276,7 @@ span1 {
     overflow: hidden;
     display: flex;
     height: auto; /*copilot */
-    aspect-ratio: 4/3; /*copilot*/
+    aspect-ratio: auto; /*copilot*/
 }
 
 .projects-box img {
