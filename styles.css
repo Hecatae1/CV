@@ -96,6 +96,19 @@ section {
 
 .home-img img {
     width: 35vw;
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .home-content h3 {
@@ -523,5 +536,7 @@ span1 {
 
     .about-img img {
         width: 90vw;
+        height: auto;
+        margin-bottom: 2rem;
     }
 }
