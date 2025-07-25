@@ -463,7 +463,7 @@ span1 {
         display:none;
     }
 
-    .navbar .active{
+    .navbar.active{
         display:block;
     }
 
@@ -494,7 +494,7 @@ span1 {
     .about{
         flex-direction:column-reverse;
     }
-    .about img {
+    .about-img {
         width: 70vw;
         margin-top: 4rem;
     }
