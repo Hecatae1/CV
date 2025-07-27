@@ -97,10 +97,8 @@ section {
 .home-img img {
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
-    height: auto; /*copilot influene*/
-    aspect-ratio: auto; /*copilot influene*/
+   
 }
-
 @keyframes floatImage {
     0%{
         transform: translateY(0);
@@ -276,7 +274,7 @@ span1 {
     overflow: hidden;
     display: flex;
     height: auto; /*copilot */
-    aspect-ratio: 16/9; /*copilot*/
+    aspect-ratio: 1/1; /*copilot*/
 }
 
 .projects-box img {
