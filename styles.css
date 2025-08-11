@@ -317,6 +317,8 @@ span1 {
 .projects-layer p{
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 .projects-layer a{
