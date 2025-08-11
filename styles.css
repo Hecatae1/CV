@@ -312,13 +312,15 @@ span1 {
 
 .projects-layer h4 {
         font-size: 3rem;
+        font-weight: 800;
     }
 
 .projects-layer p{
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
+    opacity: 1;
 }
 
 .projects-layer a{
