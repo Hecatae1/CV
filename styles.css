@@ -286,6 +286,16 @@ span1 {
     transform: scale(1.2);
 }
 
+.projects-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .projects-box .projects-layer {
     position: absolute;
     bottom: 0;
