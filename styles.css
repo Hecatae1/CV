@@ -367,7 +367,7 @@ span1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}}
+}
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
