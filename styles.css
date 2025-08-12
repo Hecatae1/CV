@@ -380,7 +380,7 @@ span1 {
 }
 .contact form .input-box input:focus,
 .contact form textarea:focus {
-    border: 2px solid var(--main-color);
+    border: 10px solid var(--main-color);
     border-radius: 1rem;
 }
 
