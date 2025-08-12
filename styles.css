@@ -375,12 +375,12 @@ span1 {
     font-size: 1.6rem;
     color: var(--text-color);
     background: var(--second-bg-color);
-    border-radius: .8rem;
+    border-radius: 1rem;
     margin: .7rem 0;
 }
 .contact form .input-box input:focus,
 .contact form textarea:focus {
-    border-radius: 2px solid var(--main-color);
+    border: 2px solid var(--main-color);
 }
 
 .contact form .input-box input {
