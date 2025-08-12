@@ -371,6 +371,8 @@ span1 {
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
+    
+
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
@@ -378,11 +380,7 @@ span1 {
     border-radius: .8rem;
     margin: .7rem 0;
 }
-.contact form .input-box input:focus,
-.contact form textarea:focus {
-  border: 2px solid var(--main-color);
-  /*outline: none;  Optional: removes default blue glow */
-}
+
 .contact form .input-box input {
     width: 49%;
 }
