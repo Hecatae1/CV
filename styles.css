@@ -217,20 +217,25 @@ span1 {
 .experiences-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
    flex-wrap: wrap;
    gap: 2rem;
     
 }
 .experiences-container .experiences-box {
-        flex: 1 1 30rem;
-        background: var(--second-bg-color);
-        padding: 3rem 2rem 4rem;
-        border-radius: 2rem;
-        text-align: center;
-        border: .2rem solid var(--bg-color);
-        transition: .5s ease;
-    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes top and bottom apart */
+
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
 
 .experiences-container .experiences-box:hover{
     border-color: var(--main-color);
@@ -241,14 +246,25 @@ span1 {
 .experiences-box i {
         font-size: 7rem;
         color: var(--main-color);
-    }
+}
 .experiences-box h3 {
     font-size: 2.6rem;
 }
 
 .experiences-box p {
     font-size: 1.6rem;
-    margin: 1rem 0 3rem
+    margin: 1rem 0 3rem;
+    
+
+}
+.experiences-container .experiences-box a {
+    align-self: center; /* centers horizontally */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    
 }
 
 .projects {
@@ -323,14 +339,16 @@ span1 {
 .projects-layer h4 {
         font-size: 3rem;
         font-weight: 700;
-    }
+}
 
 .projects-layer p{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     margin: .3rem 0 1rem;
-    font-weight: 500;
+    font-weight: 520;
     color: var(--text-color);
     opacity: 1;
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.6);
+
 }
 
 .projects-layer a{
